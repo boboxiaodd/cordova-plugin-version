@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-version"
+        version="0.0.1">
+    <name>BBPVersion</name>
+
+    <js-module name="BBPVersion" src="www/BBPVersion.js">
+        <clobbers target="BBPVersion" />
+    </js-module>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="BBPVersion">
+                <param name="ios-package" value="BBPVersion" />
+            </feature>
+        </config-file>
+        <!-- Add in the plugin .swift files here -->
+        <source-file src="src/ios/BBPVersion.swift" />
+
+        <!-- Add in the swift-support plugin by default -->
+        <dependency id="cordova-plugin-add-swift-support" />
+        <pods-config ios-min-version="11.0" use-frameworks="true" />
+    </platform>
+</plugin>
